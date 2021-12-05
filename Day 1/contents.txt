@@ -1,0 +1,20 @@
+04/12/2021
+
+React day 1
+
+1. What is react and purpose
+2. What is SPA
+3. JS refresher
+
+* let & const
+* arrow func
+* Export import
+* classes
+* class, properties Methods
+* spread and rest 
+* destructuring
+* Refernce and primitive
+* Arrays
+
+links https://academind.com/tutorials/angular-vs-react-vs-vue-my-thoughts
+GitHub https://github.com/academind/react-complete-guide-code/tree/01-getting-started
