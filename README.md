@@ -6,3 +6,4 @@
 ### day 3 [06/12/2021] React props in components
 ### day 4 [07/12/2021] React component with dynamic data / List data 
 ### DAY 5 [08/12/2021] React props dynamic 
+### DAY 6 [09/12/2021] React components composition
