@@ -79,3 +79,4 @@ day 4 [07/12/2021] React component with dynamic data / List data
 DAY 5 [08/12/2021] React props dynamic
 DAY 6 [09/12/2021] React components composition
 DAY 7 [10/12/2021] React components data iteration
+DAY 8 [11/12/2021] React components JSX create element, Isolated component CSS styles

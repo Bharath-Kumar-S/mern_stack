@@ -1,9 +1,14 @@
+import ItemAmount from "./ItemAmount";
+import ItemDate from "./ItemDate";
+import ItemTitle from "./ItemTitle";
+import './styles/item.css'
+
 const Item = ({ task }) => {
   return (
-    <div>
-      <div>{task.date}</div>
-      <h2>{task.title}</h2>
-      <div>{task.amount}</div>
+    <div className="item">
+      <ItemDate date={task.date} />
+      <ItemTitle title={task.title} />
+      <ItemAmount amount={task.amount} />
     </div>
   );
 };

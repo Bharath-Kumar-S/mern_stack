@@ -1,8 +1,6 @@
 import Header from "./components/Header"
 import "./App.css"
 import Footer from "./components/Footer"
-import Timer from "./components/Timer";
-import Inc from "./components/Inc";
 import Expense from "./components/Expense";
 
 
@@ -10,8 +8,6 @@ const App = () => {
   return (
     <div className="App-header">
       <Header appName="Header" />
-      {/* <Timer /> */}
-      {/* <Inc /> */}
       I am Bharath
       <Expense />
       <Footer appName="Footer" />
