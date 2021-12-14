@@ -4,6 +4,7 @@ import ItemAmount from "./ItemAmount";
 import ItemDate from "./ItemDate";
 import ItemTitle from "./ItemTitle";
 import './styles/item.css'
+import "./ExpenseData.css";
 
 const Item = ({ task }) => {
 
@@ -15,7 +16,7 @@ const Item = ({ task }) => {
   }
 
   return (
-    <div className="item">
+    <div className="expense-date">
       <ItemDate date={task.date} />
       <ItemTitle title={title} />
       <ItemAmount amount={task.amount} />
