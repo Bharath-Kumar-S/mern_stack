@@ -1,5 +1,6 @@
 import React from "react";
 import Item from "./Item";
+import "./Expense.css"
 
 const Expense = () => {
   const data = [

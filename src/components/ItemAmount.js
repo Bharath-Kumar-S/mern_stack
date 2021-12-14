@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import "./Expense.css";
 
-const ItemAmount = ({amount}) => {
-    return (
-        <div>
-            Amount : {amount}
-        </div>
-    )
-}
+const ItemAmount = ({ amount }) => {
+  return <div className="expense-item__price">Amount : {amount}</div>;
+};
 
-export default ItemAmount
+export default ItemAmount;
