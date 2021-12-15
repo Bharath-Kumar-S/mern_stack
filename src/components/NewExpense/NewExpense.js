@@ -3,12 +3,21 @@ import ExpenseForm from './ExpenseForm'
 
 import "./NewExpense.css"
 
-const NewExpense = () => {
-    return (
-        <div>
-            <ExpenseForm />
-        </div>
-    )
-}
+const NewExpense = ({ newData }) => {
+
+  const newExpenseHandler = (newExpenseData) => {
+    newData(newExpenseData);
+    return {
+      ...newExpenseData,
+      id: Math.random().toString(),
+    };
+  };
+
+  return (
+    <div>
+      <ExpenseForm onSaveForm={newExpenseHandler} />
+    </div>
+  );
+};
 
 export default NewExpense

@@ -4,9 +4,14 @@ import NewExpense from "./components/NewExpense/NewExpense";
 
 
 const App = () => {
+
+  const handleNewData = (newExpenseData) => {
+    console.log(newExpenseData)
+  }
+
   return (
     <div className="App-header">
-      <NewExpense />
+      <NewExpense newData={handleNewData}/>
       <Expense />
     </div>
   );
