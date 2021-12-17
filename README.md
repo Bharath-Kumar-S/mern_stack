@@ -84,4 +84,4 @@ Days
 #### Day 11 [14/12/2021] React working with multiple states and Form Submit
 #### Day 12 [15/12/2021] React add two way binding uplifting
 #### Day 12 [16/12/2021] React Task from first 1
-#### Day 13 [17/12/2021] React useState_events_task_Dynamic_list_update_for_components
+#### Day 13 [17/12/2021] React useState_events_task_Dynamic_list_update_for_components || Filter logic for expense lists
