@@ -1,19 +1,27 @@
 import React from "react";
 import Item from "./Item";
 import "./Expense.css"
+import ExpensesFilter from "./NewExpense/ExpensesFilter";
+import {useState} from "react"
 
-const Expense = () => {
-  const data = [
-    { title: "Bike", date: "2019-12-23", amount: 234 },
-    { title: "Car", date: "2019-1-25", amount: 2344 },
-    { title: "Mobile", date: "2019-2-13", amount: 250 },
-  ];
+const Expense = ({data}) => {
+  
+  const [year, setYear] = useState('2019')
+
+  const ExpenseYearHandler = (year) => {
+    setYear(year);
+  }
 
   return (
     <>
-      {data.map((d,index) => (
-        <Item key={index} task={d}/>
-      ))} 
+      <ExpensesFilter year={year} yearHandler={ExpenseYearHandler} />
+      {/* {data.map((d, index) => (
+        <Item key={index} task={d} />
+      ))} */}
+
+      {data.map((d) => (
+        <Item key={d.id} task={d} />
+      ))}
     </>
   );
 };

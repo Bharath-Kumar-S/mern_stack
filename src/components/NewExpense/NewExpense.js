@@ -1,16 +1,14 @@
-import React from 'react'
-import ExpenseForm from './ExpenseForm'
+import React from "react";
+import ExpenseForm from "./ExpenseForm";
 
-import "./NewExpense.css"
+import "./NewExpense.css";
 
 const NewExpense = ({ newData }) => {
-
   const newExpenseHandler = (newExpenseData) => {
-    newData(newExpenseData);
-    return {
+    newData({
       ...newExpenseData,
       id: Math.random().toString(),
-    };
+    });
   };
 
   return (
@@ -20,4 +18,4 @@ const NewExpense = ({ newData }) => {
   );
 };
 
-export default NewExpense
+export default NewExpense;
