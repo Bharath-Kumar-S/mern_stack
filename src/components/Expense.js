@@ -1,16 +1,20 @@
 import React from "react";
 import Item from "./Item";
-import "./Expense.css"
+import "./Expense.css";
 import ExpensesFilter from "./NewExpense/ExpensesFilter";
-import {useState} from "react"
+import { useState } from "react";
 
-const Expense = ({data}) => {
-  
-  const [year, setYear] = useState('2019')
+const Expense = ({ data }) => {
+
+  const [year, setYear] = useState("2019");
 
   const ExpenseYearHandler = (year) => {
     setYear(year);
-  }
+  };
+
+  let filteredExpense = data.filter((element) => {
+    return (new Date(element.date).getFullYear().toString() === year)
+  });
 
   return (
     <>
@@ -19,7 +23,7 @@ const Expense = ({data}) => {
         <Item key={index} task={d} />
       ))} */}
 
-      {data.map((d) => (
+      {filteredExpense.map((d) => (
         <Item key={d.id} task={d} />
       ))}
     </>
