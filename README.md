@@ -86,3 +86,4 @@ Days
 #### Day 12 [16/12/2021] React Task from first 1
 #### Day 13 [17/12/2021] React useState_events_task_Dynamic_list_update_for_components || Filter logic for expense lists
 #### Day 14 [18/12/2021] React conditional component loading
+#### Day 15 [19/12/2021] React CSS component styling 
