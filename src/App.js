@@ -24,11 +24,11 @@ const App = () => {
   }
 
   return (
-    <React.Fragment className="App-header">
+    <div className="App-header">
       Hello
       <AddUser addUser={addUser} />
       <UserList users={users} />
-    </React.Fragment>
+    </div>
   );
 };
 
