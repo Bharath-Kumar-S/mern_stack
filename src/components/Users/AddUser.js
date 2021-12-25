@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import styles from "./AddUser.module.css";
 import { useState } from "react";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 const AddUser = ({ addUser }) => {
   const [User, setUser] = useState({ name: "", age: "" });
@@ -43,7 +44,7 @@ const AddUser = ({ addUser }) => {
   }
 
   return (
-    <div>
+    <Wrapper>
       {error && <ErrorModal error={error} handler={errorHandler} />}
       <Card className={styles.input}>
         <form onSubmit={addUserHandler}>
@@ -64,7 +65,7 @@ const AddUser = ({ addUser }) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 };
 
