@@ -1,96 +1,31 @@
-import "./App.css";
-import Header from "./components/Header";
-import Tasks from "./components/Tasks";
-import React, { useState, useEffect } from "react";
-import AddTask from "./components/AddTask";
-import Footer from "./components/Footer";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import About from "./components/About";
+import React, { useState } from 'react';
 
-const App = () => {
-  const [addTaskView, setAddTaskView] = useState(false);
-  const [tasks, setTasks] = useState([]);
-  useEffect(() => {
-    const fetchTasks = async () => {
-      const tasksFromServer = await getTasks();
-      setTasks(tasksFromServer);
-    };
-    fetchTasks();
-  }, []);
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import MainHeader from './components/MainHeader/MainHeader';
 
-  const getTasks = async () => {
-    const res = await fetch("http://localhost:5000/tasks");
-    const data = await res.json();
-    return data;
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const loginHandler = (email, password) => {
+    // We should of course check email and password
+    // But it's just a dummy/ demo anyways
+    setIsLoggedIn(true);
   };
 
-  const getTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`);
-    const data = await res.json();
-    return data;
-  };
-
-  const deleteTask = async (id) => {
-    await fetch(`http://localhost:5000/tasks/${id}`, { method: "DELETE" });
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
-
-  // Toggle Reminder
-  const toggleReminder = async (id) => {
-    const task = await getTask(id);
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ ...task, reminder: !task.reminder }),
-    });
-    const data = await res.json();
-    setTasks(tasks.map((task) => (task.id === id ? { ...data } : task)));
-  };
-
-  const addTask = async (task) => {
-    const res = await fetch("http://localhost:5000/tasks", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(task),
-    });
-    const data = await res.json();
-    setTasks([...tasks, data]);
-  };
-
-  const addTaskViewHandler = () => {
-    setAddTaskView(!addTaskView);
+  const logoutHandler = () => {
+    setIsLoggedIn(false);
   };
 
   return (
-    <BrowserRouter>
-      <Header addFormView={addTaskViewHandler} addTaskView={addTaskView} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <React.Fragment>
-              {addTaskView && <AddTask addTask={addTask} />}
-              {tasks.length > 0 ? (
-                <Tasks
-                  tasks={tasks}
-                  onDelete={deleteTask}
-                  toggleReminder={toggleReminder}
-                />
-              ) : (
-                "No Task To Show"
-              )}
-              <Footer />
-            </React.Fragment>
-          }
-        />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <React.Fragment>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home onLogout={logoutHandler} />}
+      </main>
+    </React.Fragment>
   );
-};
+}
 
 export default App;
