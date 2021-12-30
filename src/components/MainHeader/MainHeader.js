@@ -2,12 +2,13 @@ import React from 'react';
 
 import Navigation from './Navigation';
 import classes from './MainHeader.module.css';
+import AuthContext from '../../store/auth_context';
 
-const MainHeader = (props) => {
+const MainHeader = () => {
   return (
     <header className={classes['main-header']}>
       <h1>A Typical Page</h1>
-      <Navigation onLogout={props.onLogout} />
+      <Navigation />
     </header>
   );
 };
