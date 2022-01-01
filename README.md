@@ -98,3 +98,6 @@ React topics : components, props, states, useEffect, react-router-dom, uplifting
 #### Day 24 [28/12/2021] React useEffect, useEffect dependencies, useEffect cleanup fumctions
 #### Day 24 [29/12/2021] React useReducer and its disptach function 
 #### Day 25 [30/12/2021] React useContext provider,consumer and useContext api
+
+
+#### Day 26 [01/01/2022] Express Mongo intro and setup and basics 
