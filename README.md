@@ -101,3 +101,4 @@ React topics : components, props, states, useEffect, react-router-dom, uplifting
 
 
 #### Day 26 [01/01/2022] Express Mongo intro and setup and basics 
+#### Day 27 [02/01/2022] Express Mongo Moongoose API with Basic CRUD
